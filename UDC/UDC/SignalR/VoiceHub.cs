@@ -63,6 +63,7 @@ namespace UDC.SignalR
                 translationConfig.SpeechRecognitionLanguage = priorityLanguage;
 
                 translationConfig.SetProperty(PropertyId.SpeechServiceConnection_ContinuousLanguageIdPriority, "Accuracy");
+                translationConfig.SetProperty(PropertyId.SpeechServiceConnection_SingleLanguageIdPriority, "Accuracy");
                 // This is required, even when language id is enabled.
                 translationConfig.AddTargetLanguage(toLanguage);
 

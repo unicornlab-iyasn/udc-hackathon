@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "G1DGP4aSYX+M9GLRgAM4PkgUxXAG76ecylGutAzfFS3pmi/NtsHTjKUKeH+hibVQkKDQz+Sb4psQcO+X507Hww==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\iyas9\\Desktop\\UDC Hackathon\\udc-hackathon\\ConsoleApp\\helloworld\\TranslatorConsoleApp.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\iyas9\\.nuget\\packages\\microsoft.cognitiveservices.speech\\1.18.0\\microsoft.cognitiveservices.speech.1.18.0.nupkg.sha512"
+  ],
+  "logs": []
+}

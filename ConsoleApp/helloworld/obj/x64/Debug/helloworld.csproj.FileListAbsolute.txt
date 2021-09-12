@@ -1,0 +1,15 @@
+C:\Users\iyas9\Desktop\UDC Hackathon\cognitive-services-speech-sdk-master\quickstart\csharp\dotnet\translate-speech-to-text\helloworld\bin\x64\Debug\Microsoft.CognitiveServices.Speech.core.dll
+C:\Users\iyas9\Desktop\UDC Hackathon\cognitive-services-speech-sdk-master\quickstart\csharp\dotnet\translate-speech-to-text\helloworld\bin\x64\Debug\Microsoft.CognitiveServices.Speech.extension.audio.sys.dll
+C:\Users\iyas9\Desktop\UDC Hackathon\cognitive-services-speech-sdk-master\quickstart\csharp\dotnet\translate-speech-to-text\helloworld\bin\x64\Debug\Microsoft.CognitiveServices.Speech.extension.kws.dll
+C:\Users\iyas9\Desktop\UDC Hackathon\cognitive-services-speech-sdk-master\quickstart\csharp\dotnet\translate-speech-to-text\helloworld\bin\x64\Debug\Microsoft.CognitiveServices.Speech.extension.lu.dll
+C:\Users\iyas9\Desktop\UDC Hackathon\cognitive-services-speech-sdk-master\quickstart\csharp\dotnet\translate-speech-to-text\helloworld\bin\x64\Debug\Microsoft.CognitiveServices.Speech.extension.codec.dll
+C:\Users\iyas9\Desktop\UDC Hackathon\cognitive-services-speech-sdk-master\quickstart\csharp\dotnet\translate-speech-to-text\helloworld\bin\x64\Debug\helloworld.exe.config
+C:\Users\iyas9\Desktop\UDC Hackathon\cognitive-services-speech-sdk-master\quickstart\csharp\dotnet\translate-speech-to-text\helloworld\bin\x64\Debug\helloworld.exe
+C:\Users\iyas9\Desktop\UDC Hackathon\cognitive-services-speech-sdk-master\quickstart\csharp\dotnet\translate-speech-to-text\helloworld\bin\x64\Debug\helloworld.pdb
+C:\Users\iyas9\Desktop\UDC Hackathon\cognitive-services-speech-sdk-master\quickstart\csharp\dotnet\translate-speech-to-text\helloworld\bin\x64\Debug\Microsoft.CognitiveServices.Speech.extension.silk_codec.dll
+C:\Users\iyas9\Desktop\UDC Hackathon\cognitive-services-speech-sdk-master\quickstart\csharp\dotnet\translate-speech-to-text\helloworld\bin\x64\Debug\Microsoft.CognitiveServices.Speech.csharp.dll
+C:\Users\iyas9\Desktop\UDC Hackathon\cognitive-services-speech-sdk-master\quickstart\csharp\dotnet\translate-speech-to-text\helloworld\obj\x64\Debug\helloworld.csprojAssemblyReference.cache
+C:\Users\iyas9\Desktop\UDC Hackathon\cognitive-services-speech-sdk-master\quickstart\csharp\dotnet\translate-speech-to-text\helloworld\obj\x64\Debug\helloworld.csproj.CoreCompileInputs.cache
+C:\Users\iyas9\Desktop\UDC Hackathon\cognitive-services-speech-sdk-master\quickstart\csharp\dotnet\translate-speech-to-text\helloworld\obj\x64\Debug\helloworld.csproj.CopyComplete
+C:\Users\iyas9\Desktop\UDC Hackathon\cognitive-services-speech-sdk-master\quickstart\csharp\dotnet\translate-speech-to-text\helloworld\obj\x64\Debug\helloworld.exe
+C:\Users\iyas9\Desktop\UDC Hackathon\cognitive-services-speech-sdk-master\quickstart\csharp\dotnet\translate-speech-to-text\helloworld\obj\x64\Debug\helloworld.pdb
