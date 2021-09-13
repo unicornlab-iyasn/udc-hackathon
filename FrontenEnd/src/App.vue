@@ -8,7 +8,6 @@
           <VideoTranscriptor
             :videoUrl="videoUrl"
             :toLanguage="toLanguage"
-            :priorityLanguage="priorityLanguage"
             :fromLanguage="fromLanguage"
             :voiceHubUrl="voiceHubUrl"
             @transcript-ready="transcriptReady"
@@ -26,15 +25,6 @@
             label="Tranlate To Language:"
           ></OuTextField>
         </div>
-        <div class="ms-Grid-col ms-sm6">
-          <p>
-            Provide the language with highest priority that is expected in this.
-          </p>
-          <OuTextField
-            v-model="priorityLanguage"
-            label="Priority Language:"
-          ></OuTextField>
-        </div>
                 <div class="ms-Grid-col ms-sm6">
           <p>
             Provide other languages that are expected in this audio.
@@ -47,7 +37,6 @@
                 <div class="ms-Grid-col ms-sm6">
           <MicrophoneTranscriptor
             :toLanguage="toLanguage"
-            :priorityLanguage="priorityLanguage"
             :fromLanguage="fromLanguage"
             :voiceHubUrl="voiceHubUrl"
             @transcript-ready="transcriptReady"
@@ -75,9 +64,8 @@ import Config from "./config";
   },
 })
 export default class App extends Vue {
-  toLanguage: string = "ru";
-  priorityLanguage: string = "en-US";
-  fromLanguage: string = "[\"ar-EG\", \"ru-RU\"]";
+  toLanguage: string = "en";
+  fromLanguage: string = "[\"en-US\", \"ar-EG\", \"ru-RU\"]";
   videoUrl: string = "";
   transcript: string = "";
 

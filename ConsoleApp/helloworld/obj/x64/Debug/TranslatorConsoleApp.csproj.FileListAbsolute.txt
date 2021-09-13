@@ -26,3 +26,5 @@ C:\Users\iyas9\Desktop\UDC Hackathon\udc-hackathon\ConsoleApp\helloworld\obj\x64
 C:\Users\iyas9\Desktop\UDC Hackathon\udc-hackathon\ConsoleApp\helloworld\obj\x64\Debug\TranslatorConsoleApp.csproj.CopyComplete
 C:\Users\iyas9\Desktop\UDC Hackathon\udc-hackathon\ConsoleApp\helloworld\obj\x64\Debug\TranslatorConsoleApp.exe
 C:\Users\iyas9\Desktop\UDC Hackathon\udc-hackathon\ConsoleApp\helloworld\obj\x64\Debug\TranslatorConsoleApp.pdb
+C:\Users\iyas9\Desktop\UDC Hackathon\udc-hackathon\ConsoleApp\helloworld\bin\x64\Debug\System.ValueTuple.dll
+C:\Users\iyas9\Desktop\UDC Hackathon\udc-hackathon\ConsoleApp\helloworld\obj\x64\Debug\TranslatorConsoleApp.csprojAssemblyReference.cache

@@ -39,9 +39,8 @@ import { start } from "repl";
   },
 })
 export default class MicrophoneTranscriptor extends Vue {
-  @Prop({ default: "ru" }) toLanguage!: string;
-  @Prop({ default: "en-US" }) priorityLanguage!: string;
-  @Prop({ default: '["ar-EG", "ru-RU"]' }) fromLanguage!: string;
+  @Prop({ default: "en" }) toLanguage!: string;
+  @Prop({ default: '["en-US", "ar-EG", "ru-RU"]' }) fromLanguage!: string;
   @Prop() voiceHubUrl!: string;
 
   private _transcriptor!: Transcriptor;
@@ -49,7 +48,7 @@ export default class MicrophoneTranscriptor extends Vue {
   stream!: MediaStream;
   audioContext!: AudioContext;
 
-  start(): void {
+  async start() {
     //     let device = navigator.mediaDevices.getUserMedia({ audio: true });
     // let items = []
     // device.then((stream) => {
@@ -70,27 +69,29 @@ export default class MicrophoneTranscriptor extends Vue {
     //   }
     // });
 
-    var audioStream = new MediaStream();
+    // var audioStream = new MediaStream();
 
-    if (navigator.mediaDevices) {
-      console.log("getUserMedia supported.");
-      navigator.mediaDevices
-        .getUserMedia({ audio: true})
-        .then(function (stream) {
-          // video.srcObject = stream;
-          // video.onloadedmetadata = function (e) {
-          //   video.play();
-          //   video.muted = true;
-          //}; 
-          audioStream = stream;
-        })
-        .catch(function (err) {
-          console.log("The following gUM error occurred: " + err);
-        });
-    } else {
-      console.log("getUserMedia not supported on your browser!");
-    }
+    // if (navigator.mediaDevices) {
+    //   console.log("getUserMedia supported.");
+    //   navigator.mediaDevices
+    //     .getUserMedia({ video: false, audio: true})
+    //     .then(function (stream) {
+    //       // video.srcObject = stream;
+    //       // video.onloadedmetadata = function (e) {
+    //       //   video.play();
+    //       //   video.muted = true;
+    //       //}; 
+    //       audioStream = stream;
+    //     })
+    //     .catch(function (err) {
+    //       console.log("The following getUserMedia error occurred: " + err);
+    //     });
+    // } else {
+    //   console.log("getUserMedia not supported on your browser!");
+    // }
 
+    var audioStream = await  navigator.mediaDevices.getUserMedia({ video: false, audio: true });
+ 
     // //start transcribing
     if (this._transcriptor === null || this._transcriptor === undefined) {
       this._transcriptor = new Transcriptor(this.voiceHubUrl, audioStream);
@@ -100,7 +101,6 @@ export default class MicrophoneTranscriptor extends Vue {
     }
     this._transcriptor.startTranscript(
       this.toLanguage,
-      this.priorityLanguage,
       this.fromLanguage
     );
   }

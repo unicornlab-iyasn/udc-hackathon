@@ -27,14 +27,14 @@ export default class VideoTranscriptor {
         this._videoElement = videoElement;
     }
 
-    async startTranscript(toLanguage : string, priorityLanguage : string, fromLanguage : string) {
+    async startTranscript(toLanguage : string, fromLanguage : string) {
         if (this._voiceHub.state != signalR.HubConnectionState.Connected)
             await this._voiceHub.start();
 
 
         console.log("In startTranscript()");
         // var startMessage = JSON.stringify({speechKey: speechKey, speechRegion: speechRegion, speechEndpoint: speechEndpoint});
-        var startMessage = JSON.stringify({toLanguage: toLanguage, priorityLanguage : priorityLanguage, fromLanguage : fromLanguage});
+        var startMessage = JSON.stringify({toLanguage: toLanguage,  fromLanguage : fromLanguage});
 
         let buf: ArrayBuffer = new ArrayBuffer(startMessage.length);
         let bufView: Uint8Array = new Uint8Array(buf);

@@ -27,14 +27,14 @@ export default class AudioTranscriptor {
         this._stream = stream;
     }
 
-    async startTranscript(toLanguage : string, priorityLanguage : string, fromLanguage : string) {
+    async startTranscript(toLanguage : string, fromLanguage : string) {
         if (this._voiceHub.state != signalR.HubConnectionState.Connected)
             await this._voiceHub.start();
 
 
         console.log("In startTranscript()");
         // var startMessage = JSON.stringify({speechKey: speechKey, speechRegion: speechRegion, speechEndpoint: speechEndpoint});
-        var startMessage = JSON.stringify({toLanguage: toLanguage, priorityLanguage : priorityLanguage, fromLanguage : fromLanguage});
+        var startMessage = JSON.stringify({toLanguage: toLanguage, fromLanguage : fromLanguage});
 
         let buf: ArrayBuffer = new ArrayBuffer(startMessage.length);
         let bufView: Uint8Array = new Uint8Array(buf);
@@ -108,9 +108,14 @@ export default class AudioTranscriptor {
         else
             this.context.resume();
 
-        if (this.mediaSource == null) 
-            this.mediaSource = this.context.createMediaStreamSource(this._stream);
-
+        if (this.mediaSource == null) {
+            console.log("Stream audio tracks length: " + this._stream.getAudioTracks().length);
+            if (this._stream.getAudioTracks().length) {
+                this.mediaSource = this.context.createMediaStreamSource(this._stream);
+    
+            }
+        }
+            
         this.filter = this.context.createBiquadFilter();
         this.filter.type = "lowpass";
         this.filter.frequency.setValueAtTime(8000, this.context.currentTime);

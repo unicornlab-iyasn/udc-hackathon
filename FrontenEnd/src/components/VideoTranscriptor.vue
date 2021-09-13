@@ -34,9 +34,8 @@ import OuButton from "./controls/OuButton.vue";
 })
 export default class VideoTranscriptor extends Vue {
   @Prop({ default: "" }) videoUrl!: string;
-  @Prop({ default: "ru" }) toLanguage!: string;
-  @Prop({ default: "en-US" }) priorityLanguage!: string;
-  @Prop({ default: '["ar-EG", "ru-RU"]' }) fromLanguage!: string;
+  @Prop({ default: "en" }) toLanguage!: string;
+  @Prop({ default: '["en-US", "ar-EG", "ru-RU"]' }) fromLanguage!: string;
   @Prop() voiceHubUrl!: string;
 
   private video!: HTMLVideoElement;
@@ -66,7 +65,7 @@ export default class VideoTranscriptor extends Vue {
         this.$emit("transcript-ready", transcript);
       };
     }
-    this._transcriptor.startTranscript(this.toLanguage, this.priorityLanguage, this.fromLanguage);
+    this._transcriptor.startTranscript(this.toLanguage, this.fromLanguage);
   }
 
   pause() {

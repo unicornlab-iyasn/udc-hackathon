@@ -42,12 +42,8 @@ namespace UDC.SignalR
                 var str = System.Text.Encoding.ASCII.GetString(args);
                 var keys = JObject.Parse(str);
                 var toLanguage = keys["toLanguage"].Value<string>();
-                var priorityLanguage = keys["priorityLanguage"].Value<string>();
                 var fromLanguagesStr = keys["fromLanguage"].Value<string>();
                 var fromLanguages = JsonConvert.DeserializeObject<string[]>(fromLanguagesStr);
-                var fromLanguagesList = fromLanguages.ToList();
-                fromLanguagesList.Insert(0, priorityLanguage);
-                fromLanguages = fromLanguagesList.ToArray();
 
                 var toLanguageCode = ToLanguageValidation(toLanguage);
                 var audioStream = new VoiceAudioStream();
@@ -56,11 +52,11 @@ namespace UDC.SignalR
                 var audioConfig = AudioConfig.FromStreamInput(audioStream, audioFormat);
 
                 var v2EndpointInString = String.Format("wss://{0}.stt.speech.microsoft.com/speech/universal/v2", _configuration["Speech:Region"]);
-                var v2EndpointUrl = new Uri(_configuration["Speech:Endpoint"]);
+                var v2EndpointUrl = new Uri(v2EndpointInString);
                 var translationConfig = SpeechTranslationConfig.FromEndpoint(v2EndpointUrl, _configuration["Speech:Key"]);
                 //var translationConfig = SpeechTranslationConfig.FromSubscription(_configuration["Speech:Key"], _configuration["Speech:Region"]);
                 //translationConfig.EndpointId = _configuration["Speech:Endpoint"];
-                translationConfig.SpeechRecognitionLanguage = priorityLanguage;
+                translationConfig.SpeechRecognitionLanguage = fromLanguages[0];
 
                 translationConfig.SetProperty(PropertyId.SpeechServiceConnection_ContinuousLanguageIdPriority, "Accuracy");
                 translationConfig.SetProperty(PropertyId.SpeechServiceConnection_SingleLanguageIdPriority, "Accuracy");
@@ -99,8 +95,6 @@ namespace UDC.SignalR
 
         public void ReceiveAudio(byte[] audioChunk)
         {
-            //Debug.WriteLine("Got chunk: " + audioChunk.Length);
-
             _connections[Context.ConnectionId].AudioStream.Write(audioChunk, 0, audioChunk.Length);
         }
 
@@ -128,14 +122,12 @@ namespace UDC.SignalR
                 Debug.WriteLine($"{e.SessionId} > Intermediate result: Translated from " +
                     $"'{detectionResult}' into '{language}': {translation}");
             }
-            //await SendTranscript(e.Result.Text, e.SessionId);
             await SendTranscript(e.Result.Translations.FirstOrDefault().Value, e.SessionId);
         }
 
         private async void _speechClient_Recognized(object sender, TranslationRecognitionEventArgs e)
         {
             Debug.WriteLine($"{e.SessionId} > Final result: {e.Result.Text}");
-            //await SendTranscript(e.Result.Text, e.SessionId);
             await SendTranscript(e.Result.Translations.FirstOrDefault().Value, e.SessionId);
         }
 
