@@ -11,7 +11,7 @@ namespace TranslatorConsoleApp
 {
     class Program
     {
-        public static async Task TranslationWithMicrophoneAsync_withLanguageDetectionEnabled(string toLanguage)
+        public static async Task TranslationWithMicrophoneAsync_withLanguageDetectionEnabled(string toLanguage, string[] fromLanguages)
         {
             try
             {
@@ -19,11 +19,11 @@ namespace TranslatorConsoleApp
                 var v2EndpointInString = String.Format("wss://{0}.stt.speech.microsoft.com/speech/universal/v2", "westeurope");
                 var v2EndpointUrl = new Uri(v2EndpointInString);
                 var translationConfig = SpeechTranslationConfig.FromEndpoint(v2EndpointUrl, "970994f6d00443dfa3b01ba78e016744");
-                translationConfig.SpeechRecognitionLanguage = "en-US";
+                translationConfig.SpeechRecognitionLanguage = fromLanguages[0];
                 translationConfig.AddTargetLanguage(toLanguage);
                 translationConfig.SetProperty(PropertyId.SpeechServiceConnection_ContinuousLanguageIdPriority, "Accuracy");
                 translationConfig.SetProperty(PropertyId.SpeechServiceConnection_SingleLanguageIdPriority, "Accuracy");
-                var autoDetectSourceLanguageConfig = AutoDetectSourceLanguageConfig.FromLanguages(new string[] { "en-US", "ar-EG", "ru-RU" });
+                var autoDetectSourceLanguageConfig = AutoDetectSourceLanguageConfig.FromLanguages(fromLanguages);
                 using (var recognizer = new TranslationRecognizer(translationConfig, autoDetectSourceLanguageConfig))
                 {
                     // Subscribes to events.
@@ -104,7 +104,8 @@ namespace TranslatorConsoleApp
             //added this so it can show russian language
             Console.OutputEncoding = Encoding.Unicode;
             var toLanguage = "ru";
-            await TranslationWithMicrophoneAsync_withLanguageDetectionEnabled(toLanguage);
+            var fromLanguages = new string[] { "en-US", "ar-EG", "ru-RU" };
+            await TranslationWithMicrophoneAsync_withLanguageDetectionEnabled(toLanguage, fromLanguages);
         }
 
         public static (string Language, string Code) ToLanguageValidation(string toLanguage)

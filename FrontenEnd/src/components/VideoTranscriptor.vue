@@ -54,11 +54,7 @@ export default class VideoTranscriptor extends Vue {
     this.video.play();
     this.isPlaying = true;
     this.isPaused = false;
-
-    // persist speech settings to storage
     localStorage.videoUrl = this.videoUrl;
-
-    // start transcribing
     if (this._transcriptor === null || this._transcriptor === undefined) {
       this._transcriptor = new Transcriptor(this.voiceHubUrl, this.video);
       this._transcriptor.transcriptReadyHandler = (transcript: string) => {

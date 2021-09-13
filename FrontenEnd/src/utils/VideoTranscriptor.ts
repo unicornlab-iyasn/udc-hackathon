@@ -33,7 +33,6 @@ export default class VideoTranscriptor {
 
 
         console.log("In startTranscript()");
-        // var startMessage = JSON.stringify({speechKey: speechKey, speechRegion: speechRegion, speechEndpoint: speechEndpoint});
         var startMessage = JSON.stringify({toLanguage: toLanguage,  fromLanguage : fromLanguage});
 
         let buf: ArrayBuffer = new ArrayBuffer(startMessage.length);

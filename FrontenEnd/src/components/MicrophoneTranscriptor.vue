@@ -49,50 +49,7 @@ export default class MicrophoneTranscriptor extends Vue {
   audioContext!: AudioContext;
 
   async start() {
-    //     let device = navigator.mediaDevices.getUserMedia({ audio: true });
-    // let items = []
-    // device.then((stream) => {
-    //   // keep the context in a global variable
-    //   this.stream = stream
-    //   let bufferSize = 1024 * 16
-    //   let audioContext = new AudioContext()
-    //   this.audioContext = audioContext
-    //   let processor = audioContext.createScriptProcessor(bufferSize, 1, 1)
-    //   this.processor = processor
-    //   processor.connect(audioContext.destination)
-    //   this.input = audioContext.createMediaStreamSource(stream)
-    //   this.input.connect(processor)
-    //   processor.onaudioprocess = (e) => {
-    //     // receives data from microphone
-    //     const buffer = e.inputBuffer.getChannelData(0) // get only one audio channel
-    //     socket.emit('micBinaryStream', buffer) // send to server via web socket
-    //   }
-    // });
-
-    // var audioStream = new MediaStream();
-
-    // if (navigator.mediaDevices) {
-    //   console.log("getUserMedia supported.");
-    //   navigator.mediaDevices
-    //     .getUserMedia({ video: false, audio: true})
-    //     .then(function (stream) {
-    //       // video.srcObject = stream;
-    //       // video.onloadedmetadata = function (e) {
-    //       //   video.play();
-    //       //   video.muted = true;
-    //       //}; 
-    //       audioStream = stream;
-    //     })
-    //     .catch(function (err) {
-    //       console.log("The following getUserMedia error occurred: " + err);
-    //     });
-    // } else {
-    //   console.log("getUserMedia not supported on your browser!");
-    // }
-
     var audioStream = await  navigator.mediaDevices.getUserMedia({ video: false, audio: true });
- 
-    // //start transcribing
     if (this._transcriptor === null || this._transcriptor === undefined) {
       this._transcriptor = new Transcriptor(this.voiceHubUrl, audioStream);
       this._transcriptor.transcriptReadyHandler = (transcript: string) => {

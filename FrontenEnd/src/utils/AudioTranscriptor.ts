@@ -33,7 +33,6 @@ export default class AudioTranscriptor {
 
 
         console.log("In startTranscript()");
-        // var startMessage = JSON.stringify({speechKey: speechKey, speechRegion: speechRegion, speechEndpoint: speechEndpoint});
         var startMessage = JSON.stringify({toLanguage: toLanguage, fromLanguage : fromLanguage});
 
         let buf: ArrayBuffer = new ArrayBuffer(startMessage.length);
@@ -194,7 +193,8 @@ export default class AudioTranscriptor {
 
     stopTranscript() {
         console.log("In  stopTranscript()");
-
+        if (this.context)
+        this.context.suspend();
         this._voiceHub.stop();
         this.transcriptReadyHandler(''); // reset transcript
     }
