@@ -1,36 +1,46 @@
-# Quickstart: Translate speech in C# for .NET Framework for Windows
+# UDC Hackathon - Live Translation Web and Console Apps
+> The main approach in this project was aimed at maximizing reusability and simplifying the integration into company's projects. The frontend was developed solely to ease the future implementations.
+>
+> - Web App is there to showcase a realistic use of the live translation functionality.
+> - Console App is there to simplify the understanding of the live translation function. This is done by removing any additional code that is used for streaming the data back and forth in the Web App.
+>
+> It is known that a demo is worth a thousand documentations, please watch this one 
 
-This sample demonstrates how to translate speech with C# under the .NET Framework (version 4.6.1 or above) using the Speech SDK for Windows.
-See the [accompanying article](https://docs.microsoft.com/azure/cognitive-services/speech-service/get-started-speech-translation?tabs=script%2Cwindowsinstall&pivots=programming-language-csharp) on the SDK documentation page which describes how to build this sample from scratch in Visual Studio 2017.
+## Web Application
+**Features:**
+- Live transcribing and translation of an input stream from the microphone
+- Live transcribing and translation of an audio stream from a video
+- Automatic source language detection (up to 10 possible source languages at once)
+- Selection of the destination language
 
-## Prerequisites
+**Approach:**
+- Backend is build using .Net Core
+- Frontend is build using Vue.js
+- Audio stream is transmitted using a SignalR hub.
+- Speech recognition, language identification and translation are done using Azure Cognitive Services.
+- Speech detection and language identification priority is set to "Accuracy" rather than "Latency". This leads to a minor increase in the delay. However, it eliminates any uncertain recognitions and language identifications, especially in the beginning of the stream. 
 
-* A subscription key for the Speech service. See [Try the speech service for free](https://docs.microsoft.com/azure/cognitive-services/speech-service/get-started).
-* A Windows PC with a working microphone.
-* [Microsoft Visual Studio 2017](https://www.visualstudio.com/), Community Edition or higher.
-* The **.NET desktop development** workload in Visual Studio.
-  You can enable it in **Tools** \> **Get Tools and Features**.
+**Running the app locally:**
+The backend solution should be opened in Visual Studio and executed from there. For the frontend:
+`
+npm install
+`
+`
+npm run serve
+`
+Video [sample](https://nmoqsa.blob.core.windows.net/thumbnails/WhatsApp%20Video%202021-09-12%20at%205.55.10%20PM.mp4) with "ar-EG" language, recorded by a friend of mine in fluent Arabic. Paste the url in the "video url" field. Note that not all languages support identification, please refer to the [documentation](https://docs.microsoft.com/en-us/azure/cognitive-services/speech-service/language-support).
 
-## Build the sample
+**Architecture:**
+![](Docs/UDC%20Web%20App.jpg?raw=true)
 
-* **By building this sample you will download the Microsoft Cognitive Services Speech SDK. By downloading you acknowledge its license, see [Speech SDK license agreement](https://aka.ms/csspeech/license201809).**
-* [Download the sample code to your development PC.](/README.md#get-the-samples)
-* Start Microsoft Visual Studio 2017 and select **File** \> **Open** \> **Project/Solution**.
-* Navigate to the folder containing this sample, and select the solution file contained within it.
-* Edit the `Program.cs` source:
-  * Replace the string `YourSubscriptionKey` with your own subscription key. Use the `Speech` resource in Azure (not the `Speech Recognition` resource).
-  * Replace the string `YourServiceRegion` with the service region of your subscription.
-    For example, replace with `westus` if you are using the 30-day free trial subscription. Make sure the region in your Azure resource matches the region you put into the sample, otherwise you'll get a 401 unauthorized access error.
-* Set the active solution configuration and platform to the desired values under **Build** \> **Configuration Manager**:
-  * On a 64-bit Windows installation, choose `x64` as active solution platform.
-  * On a 32-bit Windows installation, choose `x86` as active solution platform.
-* Press Ctrl+Shift+B, or select **Build** \> **Build Solution**.
+## Console Application
+**Running the app locally:**
+The backend solution should be opened in Visual Studio and executed from there.
 
-## Run the sample
+**Architecture:**
+![](Docs/UDC%20Console%20App.jpg?raw=true)
 
-To debug the app and then run it, press F5 or use **Debug** \> **Start Debugging**. To run the app without debugging, press Ctrl+F5 or use **Debug** \> **Start Without Debugging**.
-
-## References
-
-* [Quickstart article on the SDK documentation site](https://docs.microsoft.com/azure/cognitive-services/speech-service/get-started-speech-translation?tabs=script%2Cwindowsinstall&pivots=programming-language-csharp)
-* [Speech SDK API reference for C#](https://aka.ms/csspeech/csharpref)
+### Sources
+- Cognitive Services integration and functions were built using Microsoft's [documentation](https://docs.microsoft.com/en-us/azure/cognitive-services/speech-service/get-started-speech-translation?tabs=script%2Cwindowsinstall&pivots=programming-language-csharp).
+- SignlaR streaming was build referencing this [sample](https://github.com/msimecek/Sample-Continuous-S2T).
+> NOTE: Even though the sample was used as a base, it underwent a number of drastic changes in both backend and frontend. A number of functionalities where added and the existing ones where edited due to being outdated. If you want more details on development, please contact me. I will be happy to provide with an in-depth breakdown of the code.
