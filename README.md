@@ -4,7 +4,7 @@
 > - Web App is there to showcase a realistic use of the live translation functionality.
 > - Console App is there to simplify the understanding of the live translation function. This is done by removing any additional code that is used for streaming the data back and forth in the Web App.
 >
-> It is known that a demo is worth a thousand documentations, please watch this one 
+> It is known that a demo is worth a thousand documentations, please watch this short [demo](Docs/udcdemo.mp4)
 
 ## Web Application
 **Features:**
@@ -31,6 +31,7 @@ npm run serve
 Video [sample](https://nmoqsa.blob.core.windows.net/thumbnails/WhatsApp%20Video%202021-09-12%20at%205.55.10%20PM.mp4) with "ar-EG" language, recorded by a friend of mine in fluent Arabic. Paste the url in the "video url" field. Note that not all languages support identification, please refer to the [documentation](https://docs.microsoft.com/en-us/azure/cognitive-services/speech-service/language-support).
 
 **Architecture:**
+
 ![](Docs/UDC%20Web%20App.jpg?raw=true)
 
 ## Console Application
@@ -38,6 +39,7 @@ Video [sample](https://nmoqsa.blob.core.windows.net/thumbnails/WhatsApp%20Video%
 The backend solution should be opened in Visual Studio and executed from there.
 
 **Architecture:**
+
 ![](Docs/UDC%20Console%20App.jpg?raw=true)
 
 ### Sources
