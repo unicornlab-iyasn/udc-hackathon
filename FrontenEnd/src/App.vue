@@ -64,8 +64,10 @@ import Config from "./config";
   },
 })
 export default class App extends Vue {
-  toLanguage: string = "en";
-  fromLanguage: string = "[\"en-US\", \"ar-EG\", \"ru-RU\"]";
+  //toLanguage: string = "en";
+  toLanguage: string = "fr";
+  // fromLanguage: string = "[\"en-US\", \"ar-EG\", \"ru-RU\"]";
+  fromLanguage: string = "[\"en-US\"]";
   videoUrl: string = "";
   transcript: string = "";
 

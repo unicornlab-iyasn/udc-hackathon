@@ -28,7 +28,7 @@ namespace UDC
                builder =>
                {
                    builder.AllowAnyMethod().AllowAnyHeader().AllowCredentials()
-                   .WithOrigins("http://localhost:8080", "http://localhost:61420");
+                   .WithOrigins("http://localhost:8080", "http://localhost:3000");
                }));
             services.AddControllers();
             services.AddSignalR().AddMessagePackProtocol();

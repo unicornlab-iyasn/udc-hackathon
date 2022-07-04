@@ -51,18 +51,21 @@ namespace UDC.SignalR
                 var audioFormat = AudioStreamFormat.GetWaveFormatPCM(16000, 16, 1);
                 var audioConfig = AudioConfig.FromStreamInput(audioStream, audioFormat);
 
-                var v2EndpointInString = String.Format("wss://{0}.stt.speech.microsoft.com/speech/universal/v2", _configuration["Speech:Region"]);
-                var v2EndpointUrl = new Uri(v2EndpointInString);
-                var translationConfig = SpeechTranslationConfig.FromEndpoint(v2EndpointUrl, _configuration["Speech:Key"]);
+                //var v2EndpointInString = String.Format("wss://{0}.stt.speech.microsoft.com/speech/universal/v2", _configuration["Speech:Region"]);
+                //var v2EndpointUrl = new Uri(v2EndpointInString);
+                //var translationConfig = SpeechTranslationConfig.FromEndpoint(v2EndpointUrl, _configuration["Speech:Key"]);
+                var translationConfig = SpeechTranslationConfig.FromSubscription(_configuration["Speech:Key"], _configuration["Speech:Region"]);
                 translationConfig.SpeechRecognitionLanguage = fromLanguages[0];
 
                 translationConfig.SetProperty(PropertyId.SpeechServiceConnection_ContinuousLanguageIdPriority, "Accuracy");
                 translationConfig.SetProperty(PropertyId.SpeechServiceConnection_SingleLanguageIdPriority, "Accuracy");
                 translationConfig.AddTargetLanguage(toLanguage);
 
-                var autoDetectSourceLanguageConfig = AutoDetectSourceLanguageConfig.FromLanguages(fromLanguages);
+                //var autoDetectSourceLanguageConfig = AutoDetectSourceLanguageConfig.FromLanguages(fromLanguages);
 
-                var speechClient = new TranslationRecognizer(translationConfig, autoDetectSourceLanguageConfig, audioConfig);
+                //var speechClient = new TranslationRecognizer(translationConfig, autoDetectSourceLanguageConfig, audioConfig);
+
+                var speechClient = new TranslationRecognizer(translationConfig, audioConfig);
 
                 speechClient.Recognized += _speechClient_Recognized;
                 speechClient.Recognizing += _speechClient_Recognizing;
@@ -113,18 +116,19 @@ namespace UDC.SignalR
         private async void _speechClient_Recognizing(object sender, TranslationRecognitionEventArgs e)
         {
             Debug.WriteLine($"{e.SessionId} > Intermediate result: {e.Result.Text}");
-            var detectionResult = e.Result.Properties.GetProperty(PropertyId.SpeechServiceConnection_AutoDetectSourceLanguageResult);
-            foreach (var (language, translation) in e.Result.Translations)
-            {
-                Debug.WriteLine($"{e.SessionId} > Intermediate result: Translated from " +
-                    $"'{detectionResult}' into '{language}': {translation}");
-            }
-            await SendTranscript(e.Result.Translations.FirstOrDefault().Value, e.SessionId);
+            //var detectionResult = e.Result.Properties.GetProperty(PropertyId.SpeechServiceConnection_AutoDetectSourceLanguageResult);
+            //foreach (var (language, translation) in e.Result.Translations)
+            //{
+            //    Debug.WriteLine($"{e.SessionId} > Intermediate result: Translated from " +
+            //        $"'{detectionResult}' into '{language}': {translation}");
+            //}
+            //await SendTranscript(e.Result.Translations.FirstOrDefault().Value, e.SessionId);
         }
 
         private async void _speechClient_Recognized(object sender, TranslationRecognitionEventArgs e)
         {
             Debug.WriteLine($"{e.SessionId} > Final result: {e.Result.Text}");
+            //await SendTranscript(e.Result.Translations.FirstOrDefault().Value, e.SessionId);
             await SendTranscript(e.Result.Translations.FirstOrDefault().Value, e.SessionId);
         }
 
