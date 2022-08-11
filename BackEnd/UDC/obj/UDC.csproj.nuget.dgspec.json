@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\iyas9\\Desktop\\UDC Hackathon\\udc-hackathon\\BackEnd\\UDC\\UDC.csproj": {}
+    "C:\\tech unicorn dell\\desktop\\udc\\UDC Hackathon\\udc-hackathon\\BackEnd\\UDC\\UDC.csproj": {}
   },
   "projects": {
-    "C:\\Users\\iyas9\\Desktop\\UDC Hackathon\\udc-hackathon\\BackEnd\\UDC\\UDC.csproj": {
+    "C:\\tech unicorn dell\\desktop\\udc\\UDC Hackathon\\udc-hackathon\\BackEnd\\UDC\\UDC.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\iyas9\\Desktop\\UDC Hackathon\\udc-hackathon\\BackEnd\\UDC\\UDC.csproj",
+        "projectUniqueName": "C:\\tech unicorn dell\\desktop\\udc\\UDC Hackathon\\udc-hackathon\\BackEnd\\UDC\\UDC.csproj",
         "projectName": "UDC",
-        "projectPath": "C:\\Users\\iyas9\\Desktop\\UDC Hackathon\\udc-hackathon\\BackEnd\\UDC\\UDC.csproj",
-        "packagesPath": "C:\\Users\\iyas9\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\iyas9\\Desktop\\UDC Hackathon\\udc-hackathon\\BackEnd\\UDC\\obj\\",
+        "projectPath": "C:\\tech unicorn dell\\desktop\\udc\\UDC Hackathon\\udc-hackathon\\BackEnd\\UDC\\UDC.csproj",
+        "packagesPath": "C:\\Users\\Iyas\\.nuget\\packages\\",
+        "outputPath": "C:\\tech unicorn dell\\desktop\\udc\\UDC Hackathon\\udc-hackathon\\BackEnd\\UDC\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\iyas9\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Iyas\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -71,7 +71,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.301\\RuntimeIdentifierGraph.json"
         }
       }
     }
