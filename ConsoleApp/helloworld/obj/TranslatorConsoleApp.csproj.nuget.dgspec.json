@@ -1,42 +1,38 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\iyas9\\Desktop\\UDC Hackathon\\udc-hackathon\\ConsoleApp\\helloworld\\TranslatorConsoleApp.csproj": {}
+    "C:\\tech unicorn dell\\desktop\\udc\\UDC Hackathon\\udc-hackathon\\ConsoleApp\\helloworld\\TranslatorConsoleApp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\iyas9\\Desktop\\UDC Hackathon\\udc-hackathon\\ConsoleApp\\helloworld\\TranslatorConsoleApp.csproj": {
+    "C:\\tech unicorn dell\\desktop\\udc\\UDC Hackathon\\udc-hackathon\\ConsoleApp\\helloworld\\TranslatorConsoleApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\iyas9\\Desktop\\UDC Hackathon\\udc-hackathon\\ConsoleApp\\helloworld\\TranslatorConsoleApp.csproj",
+        "projectUniqueName": "C:\\tech unicorn dell\\desktop\\udc\\UDC Hackathon\\udc-hackathon\\ConsoleApp\\helloworld\\TranslatorConsoleApp.csproj",
         "projectName": "TranslatorConsoleApp",
-        "projectPath": "C:\\Users\\iyas9\\Desktop\\UDC Hackathon\\udc-hackathon\\ConsoleApp\\helloworld\\TranslatorConsoleApp.csproj",
-        "packagesPath": "C:\\Users\\iyas9\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\iyas9\\Desktop\\UDC Hackathon\\udc-hackathon\\ConsoleApp\\helloworld\\obj\\",
+        "projectPath": "C:\\tech unicorn dell\\desktop\\udc\\UDC Hackathon\\udc-hackathon\\ConsoleApp\\helloworld\\TranslatorConsoleApp.csproj",
+        "packagesPath": "C:\\Users\\Iyas\\.nuget\\packages\\",
+        "outputPath": "C:\\tech unicorn dell\\desktop\\udc\\UDC Hackathon\\udc-hackathon\\ConsoleApp\\helloworld\\obj\\",
         "projectStyle": "PackageReference",
         "skipContentFileWrite": true,
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\iyas9\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\Iyas\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "net461"
+          "net48"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "net461": {
+          "net48": {
             "projectReferences": {}
           }
         }
       },
       "frameworks": {
-        "net461": {
+        "net48": {
           "dependencies": {
             "Microsoft.CognitiveServices.Speech": {
               "target": "Package",

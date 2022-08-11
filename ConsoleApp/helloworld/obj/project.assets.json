@@ -1,7 +1,7 @@
 {
   "version": 3,
   "targets": {
-    ".NETFramework,Version=v4.6.1": {
+    ".NETFramework,Version=v4.8": {
       "Microsoft.CognitiveServices.Speech/1.18.0": {
         "type": "package",
         "compile": {
@@ -179,18 +179,17 @@
       "System.ValueTuple/4.5.0": {
         "type": "package",
         "frameworkAssemblies": [
-          "System",
           "mscorlib"
         ],
         "compile": {
-          "ref/net461/System.ValueTuple.dll": {}
+          "ref/net47/System.ValueTuple.dll": {}
         },
         "runtime": {
-          "lib/net461/System.ValueTuple.dll": {}
+          "lib/net47/System.ValueTuple.dll": {}
         }
       }
     },
-    ".NETFramework,Version=v4.6.1/win-arm": {
+    ".NETFramework,Version=v4.8/win-arm": {
       "Microsoft.CognitiveServices.Speech/1.18.0": {
         "type": "package",
         "compile": {
@@ -206,18 +205,17 @@
       "System.ValueTuple/4.5.0": {
         "type": "package",
         "frameworkAssemblies": [
-          "System",
           "mscorlib"
         ],
         "compile": {
-          "ref/net461/System.ValueTuple.dll": {}
+          "ref/net47/System.ValueTuple.dll": {}
         },
         "runtime": {
-          "lib/net461/System.ValueTuple.dll": {}
+          "lib/net47/System.ValueTuple.dll": {}
         }
       }
     },
-    ".NETFramework,Version=v4.6.1/win-arm64": {
+    ".NETFramework,Version=v4.8/win-arm64": {
       "Microsoft.CognitiveServices.Speech/1.18.0": {
         "type": "package",
         "compile": {
@@ -233,18 +231,17 @@
       "System.ValueTuple/4.5.0": {
         "type": "package",
         "frameworkAssemblies": [
-          "System",
           "mscorlib"
         ],
         "compile": {
-          "ref/net461/System.ValueTuple.dll": {}
+          "ref/net47/System.ValueTuple.dll": {}
         },
         "runtime": {
-          "lib/net461/System.ValueTuple.dll": {}
+          "lib/net47/System.ValueTuple.dll": {}
         }
       }
     },
-    ".NETFramework,Version=v4.6.1/win-x64": {
+    ".NETFramework,Version=v4.8/win-x64": {
       "Microsoft.CognitiveServices.Speech/1.18.0": {
         "type": "package",
         "compile": {
@@ -268,18 +265,17 @@
       "System.ValueTuple/4.5.0": {
         "type": "package",
         "frameworkAssemblies": [
-          "System",
           "mscorlib"
         ],
         "compile": {
-          "ref/net461/System.ValueTuple.dll": {}
+          "ref/net47/System.ValueTuple.dll": {}
         },
         "runtime": {
-          "lib/net461/System.ValueTuple.dll": {}
+          "lib/net47/System.ValueTuple.dll": {}
         }
       }
     },
-    ".NETFramework,Version=v4.6.1/win-x86": {
+    ".NETFramework,Version=v4.8/win-x86": {
       "Microsoft.CognitiveServices.Speech/1.18.0": {
         "type": "package",
         "compile": {
@@ -303,14 +299,13 @@
       "System.ValueTuple/4.5.0": {
         "type": "package",
         "frameworkAssemblies": [
-          "System",
           "mscorlib"
         ],
         "compile": {
-          "ref/net461/System.ValueTuple.dll": {}
+          "ref/net47/System.ValueTuple.dll": {}
         },
         "runtime": {
-          "lib/net461/System.ValueTuple.dll": {}
+          "lib/net47/System.ValueTuple.dll": {}
         }
       }
     }
@@ -604,48 +599,43 @@
     }
   },
   "projectFileDependencyGroups": {
-    ".NETFramework,Version=v4.6.1": [
+    ".NETFramework,Version=v4.8": [
       "Microsoft.CognitiveServices.Speech >= 1.18.0",
       "System.ValueTuple >= 4.5.0"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\iyas9\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\Iyas\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\iyas9\\Desktop\\UDC Hackathon\\udc-hackathon\\ConsoleApp\\helloworld\\TranslatorConsoleApp.csproj",
+      "projectUniqueName": "C:\\tech unicorn dell\\desktop\\udc\\UDC Hackathon\\udc-hackathon\\ConsoleApp\\helloworld\\TranslatorConsoleApp.csproj",
       "projectName": "TranslatorConsoleApp",
-      "projectPath": "C:\\Users\\iyas9\\Desktop\\UDC Hackathon\\udc-hackathon\\ConsoleApp\\helloworld\\TranslatorConsoleApp.csproj",
-      "packagesPath": "C:\\Users\\iyas9\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\iyas9\\Desktop\\UDC Hackathon\\udc-hackathon\\ConsoleApp\\helloworld\\obj\\",
+      "projectPath": "C:\\tech unicorn dell\\desktop\\udc\\UDC Hackathon\\udc-hackathon\\ConsoleApp\\helloworld\\TranslatorConsoleApp.csproj",
+      "packagesPath": "C:\\Users\\Iyas\\.nuget\\packages\\",
+      "outputPath": "C:\\tech unicorn dell\\desktop\\udc\\UDC Hackathon\\udc-hackathon\\ConsoleApp\\helloworld\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\iyas9\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Users\\Iyas\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
-        "net461"
+        "net48"
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
-        "net461": {
+        "net48": {
           "projectReferences": {}
         }
       }
     },
     "frameworks": {
-      "net461": {
+      "net48": {
         "dependencies": {
           "Microsoft.CognitiveServices.Speech": {
             "target": "Package",
